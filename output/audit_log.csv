@@ -1,0 +1,27 @@
+step,timestamp,operation,columns,params,rows_before,rows_after,rows_affected,cells_changed,unrelated_columns_unchanged
+1,2026-11-13T16:19:07,usunięcie duplikatów,,subset=wszystkie kolumny; keep=first; removed_rows=25,2025,2000,25,0,True
+2,2026-11-13T16:19:07,konwersja na liczby,housing_median_age,"invalid_tokens={'brak': 8, '?': 7}",2000,2000,15,15,True
+3,2026-11-13T16:19:07,normalizacja tekstu,ocean_proximity,case=upper,2000,2000,6,6,True
+4,2026-11-13T16:19:07,reguła zakresu,longitude,"rule=longitude ∈ [-124.5, -114]; action=set_nan",2000,2000,0,0,True
+5,2026-11-13T16:19:07,reguła zakresu,latitude,"rule=latitude ∈ [32.5, 42]; action=set_nan",2000,2000,6,6,True
+6,2026-11-13T16:19:07,reguła zakresu,housing_median_age,"rule=housing_median_age ∈ [1, 52]; action=set_nan",2000,2000,5,5,True
+7,2026-11-13T16:19:07,reguła zakresu,total_rooms,"rule=total_rooms ∈ [1, +∞]; action=set_nan",2000,2000,0,0,True
+8,2026-11-13T16:19:07,reguła zakresu,total_bedrooms,"rule=total_bedrooms ∈ [0, +∞]; action=set_nan",2000,2000,0,0,True
+9,2026-11-13T16:19:07,reguła zakresu,population,"rule=population ∈ [1, +∞]; action=set_nan",2000,2000,8,8,True
+10,2026-11-13T16:19:07,reguła zakresu,households,"rule=households ∈ [1, +∞]; action=set_nan",2000,2000,0,0,True
+11,2026-11-13T16:19:07,reguła zakresu,median_income,"rule=median_income ∈ [0.4999, 15.0001]; action=set_nan",2000,2000,0,0,True
+12,2026-11-13T16:19:07,reguła zakresu,median_house_value,"rule=median_house_value ∈ [14999, 500001]; action=set_nan",2000,2000,5,5,True
+13,2026-11-13T16:19:07,reguła kategorii,ocean_proximity,"rule=ocean_proximity ∈ {<1H OCEAN, INLAND, ISLAND, NEAR BAY, NEAR OCEAN}; action=set_nan",2000,2000,4,4,True
+14,2026-11-13T16:19:07,obsługa braków,median_house_value,strategy=drop; removed_rows=5,2000,1995,5,0,True
+15,2026-11-13T16:19:07,obsługa braków,latitude,strategy=median; fill_value=37.41,1995,1995,6,6,True
+16,2026-11-13T16:19:07,obsługa braków,housing_median_age,strategy=median; fill_value=27.0,1995,1995,20,20,True
+17,2026-11-13T16:19:07,obsługa braków,total_bedrooms,strategy=median; fill_value=474.0,1995,1995,60,60,True
+18,2026-11-13T16:19:07,obsługa braków,population,strategy=median; fill_value=1226.0,1995,1995,8,8,True
+19,2026-11-13T16:19:07,obsługa braków,median_income,strategy=median; fill_value=3.5761,1995,1995,20,20,True
+20,2026-11-13T16:19:07,obsługa braków,ocean_proximity,strategy=mode; fill_value=<1H OCEAN,1995,1995,34,34,True
+21,2026-11-13T16:19:07,outliery (IQR),"total_rooms, total_rooms_outlier_iqr",method=IQR; factor=1.5; action=flag; lower=-831.5; upper=5664.5,1995,1995,105,0,True
+22,2026-11-13T16:19:07,outliery (IQR),"total_bedrooms, total_bedrooms_outlier_iqr",method=IQR; factor=1.5; action=flag; lower=-181.75; upper=1192.25,1995,1995,92,0,True
+23,2026-11-13T16:19:07,outliery (IQR),"population, population_outlier_iqr",method=IQR; factor=1.5; action=flag; lower=-554.0; upper=3170.0,1995,1995,74,0,True
+24,2026-11-13T16:19:07,outliery (IQR),"households, households_outlier_iqr",method=IQR; factor=1.5; action=flag; lower=-125.5; upper=1038.5,1995,1995,84,0,True
+25,2026-11-13T16:19:07,outliery (IQR),"median_income, median_income_outlier_iqr",method=IQR; factor=1.5; action=flag; lower=-0.596; upper=8.0808,1995,1995,71,0,True
+26,2026-11-13T16:19:07,outliery (IQR),"median_house_value, median_house_value_outlier_iqr",method=IQR; factor=1.5; action=flag; lower=-27100.0; upper=380500.0,1995,1995,51,0,True
