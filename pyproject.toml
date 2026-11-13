@@ -1,0 +1,18 @@
+[project]
+name = "studio-jakosci-danych"
+version = "0.1.0"
+description = "Studio jakości i wizualizacji danych — projekt 2, Programowanie V"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

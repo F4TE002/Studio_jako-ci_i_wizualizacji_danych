@@ -1,0 +1,66 @@
+{
+  "_opis": "Reguły dla California Housing w dwóch wariantach nazw kolumn (Kaggle: snake_case, scikit-learn: CamelCase). Reguły dla nieistniejących kolumn są pomijane z ostrzeżeniem w raporcie.",
+
+  "duplicates": {
+    "enabled": true,
+    "subset": null
+  },
+
+  "coerce_numeric": {
+    "enabled": true,
+    "min_numeric_share": 0.8
+  },
+
+  "text_normalization": {
+    "ocean_proximity": "upper"
+  },
+
+  "range_rules": [
+    {"column": "longitude", "min": -124.5, "max": -114.0, "action": "set_nan"},
+    {"column": "latitude", "min": 32.5, "max": 42.0, "action": "set_nan"},
+    {"column": "housing_median_age", "min": 1, "max": 52, "action": "set_nan"},
+    {"column": "total_rooms", "min": 1, "action": "set_nan"},
+    {"column": "total_bedrooms", "min": 0, "action": "set_nan"},
+    {"column": "population", "min": 1, "action": "set_nan"},
+    {"column": "households", "min": 1, "action": "set_nan"},
+    {"column": "median_income", "min": 0.4999, "max": 15.0001, "action": "set_nan"},
+    {"column": "median_house_value", "min": 14999, "max": 500001, "action": "set_nan"},
+
+    {"column": "Longitude", "min": -124.5, "max": -114.0, "action": "set_nan"},
+    {"column": "Latitude", "min": 32.5, "max": 42.0, "action": "set_nan"},
+    {"column": "HouseAge", "min": 1, "max": 52, "action": "set_nan"},
+    {"column": "MedInc", "min": 0.4999, "max": 15.0001, "action": "set_nan"},
+    {"column": "AveRooms", "min": 0.5, "action": "set_nan"},
+    {"column": "AveBedrms", "min": 0.1, "action": "set_nan"},
+    {"column": "Population", "min": 1, "action": "set_nan"},
+    {"column": "AveOccup", "min": 0.5, "action": "set_nan"},
+    {"column": "MedHouseVal", "min": 0.14999, "max": 5.00001, "action": "set_nan"}
+  ],
+
+  "allowed_values": [
+    {
+      "column": "ocean_proximity",
+      "values": ["<1H OCEAN", "INLAND", "NEAR OCEAN", "NEAR BAY", "ISLAND"],
+      "action": "set_nan"
+    }
+  ],
+
+  "missing": {
+    "default_numeric": "median",
+    "default_text": "mode",
+    "columns": {
+      "median_house_value": "drop",
+      "MedHouseVal": "drop"
+    }
+  },
+
+  "outliers": {
+    "method": "iqr",
+    "factor": 1.5,
+    "action": "flag",
+    "columns": [
+      "total_rooms", "total_bedrooms", "population", "households", "median_income", "median_house_value",
+      "MedInc", "AveRooms", "AveBedrms", "Population", "AveOccup", "MedHouseVal"
+    ]
+  }
+}
