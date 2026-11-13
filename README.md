@@ -132,15 +132,26 @@ Raport z ostatniego uruchomienia: **60 testów, 60 zaliczonych** (Python 3.14.3,
 - Zbiór `data/raw/california_housing_sample.csv` jest **syntetyczny** (schemat jak California
   Housing z Kaggle) — służy do rozwoju do czasu otrzymania zbioru referencyjnego.
 
-## Źródła, biblioteki i narzędzia AI
+## Źródła i biblioteki
 
 - pandas — https://pandas.pydata.org/docs/ (read_csv, braki danych, duplikaty)
 - Reguła IQR (Tukey, 1977) — granice Q1 − 1.5·IQR, Q3 + 1.5·IQR
 - Opis zbioru California Housing — Pace & Barry (1997); dokumentacja scikit-learn `fetch_california_housing`
 - Kod inspiracyjny z instrukcji projektu (`DataSession`, `iqr_mask`)
 - Biblioteki: pandas, numpy, matplotlib, seaborn, pytest
-- **Narzędzia AI:** przy tworzeniu kodu, testów i dokumentacji korzystano z asystenta
-  Claude (Anthropic) w Claude Code. Kod został przejrzany i jest rozumiany przez autora.
+
+## Wykorzystanie narzędzi AI
+
+Projekt był realizowany z pomocą asystenta AI **Claude (Anthropic)** w narzędziu Claude Code.
+AI pomagało w:
+
+- zaprojektowaniu struktury pakietu i modelu sesji (na bazie kodu inspiracyjnego z instrukcji),
+- pisaniu kodu wczytywania, profilowania, reguł jakości, czyszczenia i raportu,
+- przygotowaniu testów automatycznych, danych testowych i generatora zbioru demonstracyjnego,
+- redagowaniu dokumentacji.
+
+Autor przejrzał wygenerowany kod, uruchomił testy, rozumie zastosowane rozwiązania
+i odpowiada za decyzje dotyczące strategii czyszczenia danych.
 
 ## Autorzy
 
