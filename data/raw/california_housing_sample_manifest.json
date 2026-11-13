@@ -1,0 +1,25 @@
+{
+  "seed": 42,
+  "base_rows": 2000,
+  "total_rows": 2025,
+  "injected": {
+    "missing_total_bedrooms": 60,
+    "missing_median_income": 20,
+    "missing_ocean_proximity": 30,
+    "invalid_token_housing_median_age": 15,
+    "out_of_range_housing_median_age": 5,
+    "out_of_range_population": 8,
+    "out_of_range_latitude": 6,
+    "out_of_range_median_house_value": 5,
+    "unnormalized_ocean_proximity": 6,
+    "invalid_category_ocean_proximity": 4,
+    "extreme_total_rooms": 10,
+    "full_duplicates": 25
+  },
+  "expected_after_cleaning": {
+    "rows": 1995,
+    "missing_cells": 0,
+    "full_duplicates": 0,
+    "rule_violations": 0
+  }
+}
