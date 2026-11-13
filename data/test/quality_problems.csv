@@ -1,0 +1,10 @@
+id,city,price,area,category
+1,Kraków,450000,52,A
+2,Gdańsk,,47,B
+3,,290000,39,A
+1,Kraków,450000,52,A
+5,Kraków,450000,52,B
+6,Poznań,510000,,
+7,Toruń,?,44,C
+8,Lublin,-100,-3,A
+9,Opole,999999999,1500,B
